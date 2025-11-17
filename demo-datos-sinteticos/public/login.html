@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Sintético</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>🔐 Login Sintético</h2>
+        <p>Ingresa tu email y contraseña para continuar</p>
+
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Correo electrónico" required />
+            <input type="password" id="password" placeholder="Contraseña" required />
+
+            <button type="submit">Ingresar</button>
+        </form>
+
+        <p id="errorMsg" class="error"></p>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            const res = await fetch("/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await res.json();
+
+            if (!data.success) {
+                document.getElementById("errorMsg").textContent = data.message;
+            } else {
+                window.location.href = "/";
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>E-commerce Sintético</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>🛍️ E-Commerce con Datos Sintéticos</h1>
+        <p>Demostración visual de usuarios generados automáticamente.</p>
+    </header>
+
+    <section class="container" id="users-container">
+        <h2>Usuarios generados</h2>
+        <div class="grid" id="user-grid"></div>
+    </section>
+
+    <script>
+        async function loadUsers() {
+            const res = await fetch('/users');
+            const users = await res.json();
+
+            const grid = document.getElementById('user-grid');
+
+            users.forEach(u => {
+                const card = document.createElement('div');
+                card.className = 'card';
+
+                card.innerHTML = `
+                    <div class="avatar">${u.name.charAt(0)}</div>
+                    <h3>${u.name}</h3>
+                    <p><strong>Email:</strong> ${u.email}</p>
+                    <p><strong>Edad:</strong> ${u.age}</p>
+                    <p class="date">Registrado: ${new Date(u.createdAt).toLocaleDateString()}</p>
+                `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        loadUsers();
+    </script>
+</body>
+</html>

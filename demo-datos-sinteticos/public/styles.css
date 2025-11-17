@@ -1,0 +1,112 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f3f4f6;
+  color: #333;
+}
+
+header {
+  background: #5a4ff7;
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 3px 10px #00000030;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px #00000020;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: #5a4ff7;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin-top: 5px;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* LOGIN PAGE */
+
+.login-container {
+    max-width: 350px;
+    margin: 100px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #00000030;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 10px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: #5a4ff7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+}
+
+.login-container button:hover {
+    background: #4a3dd8;
+}
+
+.error {
+    margin-top: 10px;
+    color: red;
+    font-size: 0.9rem;
+}
