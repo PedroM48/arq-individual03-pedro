@@ -59,16 +59,15 @@ Aplicado a las pruebas, los datos sintéticos permiten:
 
 ## 👾 Consideraciones Técnicas
 
-En términos prácticos, Bulkhead es:
+En términos prácticos, **Faker** es:
 
-- Dividir el sistema en secciones independientes.
-- Si una sección falla, solo esa parte se ve afectada.
-- Mantiene el resto del sistema funcionando sin problemas.
-- Ejemplo: Si el servicio de pagos falla, el catálogo y las reservas siguen operando.
+- Generar datos artificiales para simular usuarios, productos, pedidos, etc.
+- Probar funcionalidades del sistema sin depender de datos reales.
+- Asegurar la integridad del entorno de pruebas manteniendo los datos ficticios aislados.
 
-Como analogía es como compartimentar un barco: "*Si una sección se llena de agua, no se hunde todo el barco*".
+Ejemplo: Si se crea un **login con usuarios generados por Faker**, el **sistema de autenticación** y las **funcionalidades de la página eCommerce siguen operando sin comprometer datos sensibles**.
 
-Estas consideraciones están pensadas para **equipos que comienzan con arquitectura de microservicios** y buscan mejorar **resiliencia en entornos cloud**.
+Como analogía es como crear un "entorno controlado": "*Puedes probar todo el sistema sin que afecte a los usuarios reales ni comprometa sus datos*"
 
 ---
 ---
