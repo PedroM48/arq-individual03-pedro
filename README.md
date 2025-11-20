@@ -103,13 +103,19 @@ Antes de comenzar, necesitas instalar lo siguiente:
    npm init -y
     ```
 
-## 3. Instalar **Express, Faker y Herramientas de Test**
+## 3. Instalar **Express**, **Faker**, **Playwright** y **Herramientas de Test**
 
 1. Instala Express (API para exponer los datos) y Faker (para generar datos sintéticos):
     ```bash
     npm install express @faker-js/faker
     ```
-2. Instala herramientas de Test (automatización de pruebas usando esos datos):
+2. Instala Playwright (para automatización de pruebas):
+    ```bash
+    npm install -D @playwright/test
+    npx playwright install
+    ```
+
+3. Instala herramientas de Test (automatización de pruebas usando esos datos):
     ```bash
     npm install jest supertest --save-dev
     ```

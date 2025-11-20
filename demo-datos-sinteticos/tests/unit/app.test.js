@@ -29,4 +29,3 @@ describe("Pruebas con datos sintéticos", () => {
     expect(res.body.email).toBe("test@example.com");
   });
 });
-x
