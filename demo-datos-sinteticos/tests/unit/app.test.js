@@ -1,6 +1,6 @@
 const request = require("supertest");
-const app = require("../app");
-const { seed } = require("../seed");
+const app = require("../../app");
+const { seed } = require("../../seed");
 
 describe("Pruebas con datos sintéticos", () => {
 
